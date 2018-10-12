@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 var fs = require('file-system'); //Filesystem    
 
 /* Converting html file into string */
-var edmContent = fs.readFileSync("/Users/sivakumar/Desktop/ServerSideProject/NodeProjects/Mail/mailedm.html","utf-8");
+var edmContent = fs.readFileSync("mailedm.html","utf-8");
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
