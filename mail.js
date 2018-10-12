@@ -1,10 +1,21 @@
 
 /* Importing modules */
 var nodemailer = require('nodemailer');
-var fs = require('file-system'); //Filesystem    
+var fs = require('file-system');
+var express = require('express');
 
-/* Converting html file into string */
-var edmContent = fs.readFileSync("mailedm.html","utf-8");
+var bodyParser = require('body-parser')
+var app = express();
+
+app.use(bodyParser.json())
+
+
+
+
+app.get('/', function (req, res) {
+  console.log("welcome");
+
+  var edmContent = fs.readFileSync("mailedm.html","utf-8");
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -16,18 +27,25 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: "int.rsivakumar@gmail.com",
-  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com","snehasubramanian2000@gmail.com"],
-  subject: 'Vision Market - Order Confirmation',
+  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com"],
+  subject: 'Sending Email using Node.js',
   html: edmContent
 };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 });
+
+
+
+
+/* Converting html file into string */
+
 
 
 
