@@ -9,29 +9,26 @@ var app = express();
 
 app.use(bodyParser.json())
 
-
-
-
 app.get('/', function (req, res) {
   console.log("welcome");
 
   var edmContent = fs.readFileSync("mailedm.html","utf-8");
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: "int.rsivakumar@gmail.com",
-    pass: 'siva1234'
-  }
-});
-
-var mailOptions = {
-  from: "int.rsivakumar@gmail.com",
-  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com"],
-  subject: 'Sending Email using Node.js',
-  html: edmContent
-};
-
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: "int.rsivakumar@gmail.com",
+      pass: 'siva1234'
+    }
+  });
+  
+  var mailOptions = {
+    from: "int.rsivakumar@gmail.com",
+    to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com"],
+    subject: 'Sending Email using Node.js',
+    html: edmContent
+  };
+  
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
