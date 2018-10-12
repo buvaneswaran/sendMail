@@ -16,8 +16,8 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: "int.rsivakumar@gmail.com",
-  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com"],
-  subject: 'Sending Email using Node.js',
+  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com","snehasubramanian2000@gmail.com"],
+  subject: 'Vision Market - Order Confirmation',
   html: edmContent
 };
 
