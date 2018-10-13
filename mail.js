@@ -24,6 +24,10 @@ restService.post("/home", function (req, res) {
   });
 });
 
+restService.listen(process.env.PORT || 8000, function () {
+  console.log("Server up and listening");
+});
+
 
 
 /* Converting html file into string */
