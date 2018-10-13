@@ -2,10 +2,6 @@
 /* Importing modules */
 var nodemailer = require('nodemailer');
 var fs = require('file-system');
-var express = require('express');
-
-
-
 var edmContent = fs.readFileSync("mailedm.html","utf-8");
 
 var transporter = nodemailer.createTransport({
@@ -18,7 +14,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: "int.rsivakumar@gmail.com",
-  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com"],
+  to: ["int.rsivakumar@gmail.com", "pbuvaneswaran@interaktmail.com","buvanesh.special@gmail.com"],
   subject: 'Vision Market',
   html: edmContent
 };
