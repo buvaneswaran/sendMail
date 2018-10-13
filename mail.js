@@ -17,7 +17,11 @@ restService.use(bodyParser.json());
 
 
 restService.get("/home", function (req, res) {
-  return res.send("200");
+   return res.json({
+    speech: "Welcome",
+    displayText:  "Welcome",
+    source: "webhook-echo-sample"
+  });
 });
 
 
