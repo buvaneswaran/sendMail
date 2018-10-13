@@ -16,7 +16,7 @@ restService.use(bodyParser.json());
 
 
 
-restService.get("/home", function (req, res) {
+restService.post("/home", function (req, res) {
    return res.json({
     speech: "Welcome",
     displayText:  "Welcome",
