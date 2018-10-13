@@ -3,21 +3,18 @@
 var nodemailer = require('nodemailer');
 var express = require('express');
 var bodyParser = require('body-parser')
+var fs = require('file-system');
 
 var app = express();
 app.use(bodyParser.json())
 
+
+
 app.get('/', function (req, res) {
 
-    console.log(req.url);
-   res.send('Hello World');
-})
-
-app.post('/getval', function(req, res) {
-
-    let fromAdd = req.body.from
-    let toAdd = req.body.to
-    let htmlAdd = req.body.html
+    let fromAdd = "int.rsivakumar@gmail.com";
+    let toAdd = "buvanesh.special@gmail.com"
+    var htmlAdd = fs.readFileSync("mailedm.html","utf-8");
 
     console.log(fromAdd);
     console.log(toAdd);
